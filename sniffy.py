@@ -13,8 +13,8 @@ import json
 import time
 from pathlib import Path
 
-# Add src directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+# Add src directory to path (absolute)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src'))
 
 from core.scanner import SniffyScanner
 from core.config import Config

@@ -66,6 +66,14 @@ sniffy --help
 - **Storage:** 2GB free space
 - **Network:** Internet connection for tool downloads
 
+### Prerequisites
+
+- Python 3.6+
+- `curl`
+- `sudo`
+- `bash`
+- `go` (for Go-based tools)
+
 ### 🎯 Installation Methods
 
 #### Method 1: Automated (Recommended)

@@ -1,0 +1,4 @@
+if not self.logger.handlers:
+    self.logger.addHandler(console_handler)
+
+wordlist_path = self.config.get_wordlist_path('directories/common.txt')

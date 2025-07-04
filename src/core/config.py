@@ -61,4 +61,11 @@ class Config:
     
     def get_wordlist_path(self, wordlist_name):
         """Get full path to wordlist file"""
-        return self.base_dir / 'wordlists' / wordlist_name
+        wordlist_path = Path(wordlist_name)
+        if wordlist_path.is_absolute():
+            return wordlist_path
+        # Remove leading 'wordlists/' if present
+        parts = wordlist_path.parts
+        if parts and parts[0] == 'wordlists':
+            wordlist_path = Path(*parts[1:])
+        return self.base_dir / 'wordlists' / wordlist_path
