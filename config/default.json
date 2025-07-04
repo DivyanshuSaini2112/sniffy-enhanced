@@ -1,0 +1,57 @@
+{
+  "scanning": {
+    "default_ports": "1-1000",
+    "top_ports": 1000,
+    "max_threads": 50,
+    "timeout": 10,
+    "rate_limit": 1000,
+    "max_retries": 3
+  },
+  "stealth": {
+    "delay_range": [0.1, 0.5],
+    "randomize_user_agents": true,
+    "use_decoys": true,
+    "fragment_packets": true,
+    "randomize_hosts": true
+  },
+  "wordlists": {
+    "directories": {
+      "common": "wordlists/directories/common.txt",
+      "api": "wordlists/directories/api.txt",
+      "admin": "wordlists/directories/admin.txt"
+    },
+    "files": {
+      "sensitive": "wordlists/files/sensitive.txt",
+      "backup": "wordlists/files/backup.txt",
+      "config": "wordlists/files/config.txt"
+    },
+    "subdomains": {
+      "common": "wordlists/subdomains/common.txt",
+      "bruteforce": "wordlists/subdomains/bruteforce.txt"
+    }
+  },
+  "output": {
+    "format": "html",
+    "include_raw": true,
+    "compress": false,
+    "template": "default"
+  },
+  "modules": {
+    "network_scanner": {
+      "enabled": true,
+      "nmap_path": "/usr/bin/nmap"
+    },
+    "web_scanner": {
+      "enabled": true,
+      "user_agents": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+      ]
+    },
+    "vulnerability_scanner": {
+      "enabled": true,
+      "nuclei_templates": "/opt/nuclei-templates"
+    }
+  }
+}
