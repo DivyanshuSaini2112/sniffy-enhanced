@@ -148,7 +148,7 @@ class WebScanner:
     def _enumerate_directories(self, url):
         """Enumerate directories using wordlist"""
         directories = []
-        wordlist_path = self.config.get_wordlist_path('directories/common.txt')
+        wordlist_path = self.config.get_wordlist_path('directories')
         
         try:
             with open(wordlist_path, 'r') as f:
